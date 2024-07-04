@@ -1,4 +1,4 @@
 Colab 사이트 주소
 -------
 
-=> https://colab.research.google.com/#scrollTo=EPbXiOzNiOIV
+=> https://colab.research.google.com/
