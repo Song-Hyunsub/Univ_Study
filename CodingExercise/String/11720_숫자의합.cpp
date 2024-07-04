@@ -4,6 +4,7 @@ N개의 숫자가 공백 없이 쓰여진다. 이 숫자를 모두 합해서 출
 isdigit(ch) => ch가 0~9인 숫자이면 1, 아니면 0을 반환하는 함수
 */
 
+// [Solution 1]
 #include <iostream>
 #include <string>
 using namespace std;
@@ -27,3 +28,25 @@ int main(){
     } else cout << "Error!";
     return 0;
 }
+
+/*
+[Solution 2]
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int n; // 숫자의 갯수
+    char ch;
+    cin >> n;
+    int total = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> ch;
+        total += ch - 48;  // char형으로 받았으므로, 아스키코드 '0'의 값, 48을 빼줌
+    }
+    cout << total << endl;
+    return 0;
+}
+
+ */
