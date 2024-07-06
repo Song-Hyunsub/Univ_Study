@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-char arr[5][16];    // 꼭 전역변수로 선언해야 힘!
+char arr[5][16];    // 꼭 전역변수로 선언해야 NULL로 초기화됨!
 int main(){
     
 
