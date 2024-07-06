@@ -182,12 +182,12 @@ int main()
 	std::cin >> num;
 	if (num >= 10000) std::cerr << "\n정수의 자릿수가 잘못되었습니다!";
 	else {
-		for (int i = 3; i >= 0; i--) {
-			std::cout << 10^i << "의 자릿수 : " << num / 10^i << std::endl;
-			num %= 10^i;
+	  int p=1000;
+		for (int i = 0; i<4; i++) {
+			std::cout << p << "의 자릿수 : " << num / p << std::endl;
+			num %= p; 
+			p /= 10;
 		}
 	}
 	return 0;
-
 }
-// 2, 36, 10, : 3291
