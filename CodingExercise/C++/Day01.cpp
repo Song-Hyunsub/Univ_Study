@@ -64,8 +64,16 @@
 // 여러 개의 데이터를 입력 받을 때는 변수 뒤에 >>를 작성하고 그 뒤에 추가적인 변수까지 작성한다.
 //				 ex) int num1, num2;
 //					 std::cin >> num1 >> num2;
+// std::cin은 공백을 입력받을 수 없다!
+// std::cin.get() 함수를 사용해서 공백을 입력받을 수 있다.
+// 이때는 std::cin.get(문자를 저장할 변수) 형식으로 진행할 수 있다.
 // 
-// 
+
+//---- 공백 포함 문자열 ----
+// std::cin.getline() 함수 => 공백 포함 문자열을 입력받을 수 있다.
+// std::cin.getline 함수의 첫 번째 매개 변수는 저장할 공간, 두 번째 매개 변수는 최대 크기이다.
+//				ex) char str[100];
+//					std::cin.getline(str, 100);
 // 
 // 
 
@@ -177,15 +185,83 @@ int main()
 	std::cout << std::endl;
 	*/
 	// 실습 2번 : 10000 보다 작은 정수를 입력 받고 각 자릿수를 출력하세요
+	/*
 	int num;
 	std::cout << "정수 입력: ";
 	std::cin >> num;
 	if (num >= 10000) std::cerr << "\n정수의 자릿수가 잘못되었습니다!";
-	else { // p 없이 완성해보기
+	else {
 		for (int i = 1000; i > 0; i /= 10) {
 			std::cout << i << "의 자릿수 : " << num / i << std::endl;
 			num %= i;
 		}
 	}
+	*/
+
+	/*
+	char str[100];
+
+	std::cout << "입력: ";
+	std::cin >> str;
+	
+	std::cout << "출력: " << str << std::endl;	// 입력을 마치는 문자 : \n, 공백, \t
+
+	*/
+
+	/*
+	char ch;
+
+	std::cout << "입력: ";
+	std::cin.get(ch);
+
+	std::cout << "출력: " << ch << std::endl;
+	*/
+	
+
+
+	/* 실습 1 : 문자열
+	Enter가 입력될 때까지 계속해서 입력받는 프로그램을 작성해보세요. (문자열을 저장할 공간은 배열을 통해 할당 받자)
+	*/
+
+	/* [풀이 1]
+	int i = 0;
+	char str[1000];
+	std::cout << "입력: ";
+	while (i < 1000) {
+		std::cin.get(str[i]);	// 공백을 포함하여 문자를 받음.
+		if (str[i] == '\n') {			// Enter가 들어오면 while문 탈출
+			break; 
+		}
+		i++;						// i+=1
+	}
+	str[i] = '\0';				// 반복문이 끝난 후 i의 마지막 원소에 문자의 끝을 알리는 널값을 할당
+	std::cout << "출력: " << str << std::endl;	// 출력
+	*/
+
+	/* [풀이 2]
+	char str[1000];
+	int cnt = 0;
+	std::cout << "문자열 입력: ";
+	while (1) {
+		std::cin.get(str[cnt]);	// 공백을 포함하여 문자를 받음.
+		if (str[cnt] == '\n') {
+			str[cnt] = NULL;	// 이렇게도 표현 가능!
+			break;
+		}
+		cnt++;						// i+=1
+	}
+	std::cout << "출력: " << str << std::endl;	// 출력
+	*/
+	
+	char str[100];
+	std::cout << "문자열 입력: ";
+	std::cin.getline(str, 100);				// 위의 반복문과 동일한 기능을 가진 함수!!
+
+	std::cout << "문자열 출력: " << str << std::endl;
+
 	return 0;
 }
+
+
+
+// \0 => 보통 일반 변수의 초기화 또는 문자열의 끝을 알릴 때
