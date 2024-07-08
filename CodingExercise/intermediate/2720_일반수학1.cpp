@@ -16,4 +16,5 @@ int main(){
         cout << endl;
         T--;
     }
-    
+    return 0;
+}
