@@ -1,2 +1,1 @@
-*.cpp linguist-vendored
 *.sql linguist-vendored=false
