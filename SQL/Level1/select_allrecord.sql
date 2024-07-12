@@ -1,0 +1,8 @@
+/*
+테이블 : ANIMAL_INS
+출력 컬럼 : *
+조건) ORDER BY ANIMAL_ID
+
+*/
+SELECT * FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
