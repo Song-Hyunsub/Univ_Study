@@ -46,7 +46,9 @@ struct Data {
 	int data2;
 };
 */
-
+/*
+반환 값을 저장할 변수 = 함수리음(인수)
+*/
 struct exam {
 	int ko;
 	int math;
@@ -61,24 +63,39 @@ int totalf(int ko, int math, int en) {
 }
 
 double avgf(int total) {
-	return total / (double)3;
+	return total / 3.0;
 }
 
-int gradef(int avg) {
-	if (avg >= 90) {
+char gradef(double avg) {
+	/*
+	if (avg >= 90.0) {
 		return 'A';
 	}
-	else if (avg >= 80) {
+	else if (avg >= 80.0) {
 		return 'B';
 	}
-	else if (avg >= 70) {
+	else if (avg >= 70.0) {
 		return 'C';
 	}
-	else if (avg >= 60) {
+	else if (avg >= 60.0) {
 		return 'D';
 	}
 	else {
 		return 'F';
+	}
+	*/
+	switch ((int)avg / 10) {	// switch내의 변수는 정수 계열만 비교 가능
+		case 10:		// 아래와 동일하면 생략 가능!!
+		case 9:
+			return 'A';	// return은 값 반환과 동시에 종료시키는 역할까지 함 (break 필요 x)
+		case 8:
+			return 'B';
+		case 7:
+			return 'C';
+		case 6:
+			return 'D';
+		default:
+			return 'F';
 	}
 }
 
@@ -329,9 +346,12 @@ int main() {
 	std::cout << "국어, 수학, 영어 성적 입력: ";
 	std::cin >> e.ko >> e.math >> e.en;
 
-    	e.total = totalf(e.ko, e.math, e.en);
+	e.total = totalf(e.ko, e.math, e.en);
 	e.avg = avgf(e.total);
-    	e.grade = gradef(e.avg);
+	e.grade = gradef(e.avg);
+
+	std::cout.setf(std::ios::fixed);	// 소수점 한정으로 고정
+	std::cout.precision(2);		// 두 자리수까지
 
 	std::cout << "총합: " << e.total << std::endl;
 	std::cout << "평균: " << e.avg << std::endl;
