@@ -1,0 +1,9 @@
+/*
+테이블 : FISH_INFO
+출력 컬럼 : COUNT(*) AS FISH_COUNT
+조건) LENGTH <= 10  => 10 이하일 경우 LENGTH가 NULL이라는 조건이 있음
+*/
+
+SELECT COUNT(*) AS FISH_COUNT
+FROM FISH_INFO
+WHERE LENGTH IS NULL;
