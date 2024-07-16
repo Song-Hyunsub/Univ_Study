@@ -1,3 +1,5 @@
+
+/* [Solution 1]
 #include <iostream>
 using namespace std;
 int main(){
@@ -17,5 +19,43 @@ int main(){
             cout << i << "\n";
         }
     }
+    return 0;
+}
+*/
+
+/* [Solution 2] => 시간 초과!!
+#include <iostream>
+using namespace std;
+int fact(int n){
+    if(n==1) return 1;
+    else return n * fact(n-1);
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int n, k, c;
+    cin >> n >> k;
+    c = fact(n) / (fact(n-k)*fact(k));
+    cout << c << "\n";
+    return 0;
+}
+*/
+
+// [Solution 3]
+#include <iostream>
+using namespace std;
+int fact(int n){
+    int mul = 1;
+    for(int i=n; i>0; i--){
+        mul *= i;
+    }
+    return mul;
+}
+int main(){
+    int n, k, c;
+    cin >> n >> k;
+    c = fact(n) / (fact(n-k)*fact(k));
+    cout << c << "\n";
     return 0;
 }
