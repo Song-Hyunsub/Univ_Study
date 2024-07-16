@@ -20,3 +20,32 @@ t.color("green")			# 선의 색을 녹색으로 한다.
 t.speed(1)				# 속도를 제일 느리게 한다.
 t.goto(0,-100)          #트리 시작 위치 조절
 tree(90)
+
+
+'''
+ex) tree(30) 실행 이해하기
+
+tree(30)
+    forward(30)
+    right(20)
+    tree(15)
+        forward(15)
+        right(20)
+        tree(0) #
+        left(40)
+        tree(0) #
+        right(20)
+        backward(15)
+    left(40)
+    tree(15)
+        forward(15)
+        right(20)
+        tree(0) #
+        left(40)
+        tree(0) #
+        right(20)
+        backward(15)
+    right(20)
+    backward(30)
+        
+'''
