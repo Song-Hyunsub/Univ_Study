@@ -1,0 +1,9 @@
+/*
+테이블 : ECOLI_DATA
+출력 컬럼 : COUNT(*) AS COUNT
+조건) GENOTYPE % 16 IN (1, 4, 5, 9, 12, 13)
+*/
+
+SELECT COUNT(*) AS COUNT
+FROM ECOLI_DATA
+WHERE GENOTYPE % 16 IN (1, 4, 5, 9, 12, 13);
