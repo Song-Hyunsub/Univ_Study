@@ -1,0 +1,8 @@
+/*
+테이블 : ANIMAL_INS
+컬럼 : MAX(DATETIME) AS 시간
+
+*/
+
+SELECT MAX(DATETIME) AS 시간
+FROM ANIMAL_INS;
