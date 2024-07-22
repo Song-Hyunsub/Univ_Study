@@ -1,0 +1,22 @@
+/*
+테이블 : ONLINE_SALE
+출력 컬럼 : USER_ID, PRODUCT_ID
+조건)
+GROUP BY (USER_ID, PRODUCT_ID)
+HAVING COUNT(USER_ID, PRODUCT_ID) > 1
+*/
+
+SELECT USER_ID, PRODUCT_ID
+FROM ONLINE_SALE
+GROUP BY USER_ID, PRODUCT_ID
+HAVING COUNT(*) > 1
+ORDER BY USER_ID, PRODUCT_ID DESC;
+
+/*
+주의)
+HAVING COUNT(USER_ID, PRODUCT_ID) > 1
+으로 사용하면 오류 발생!!
+
+COUNT 함수의 매개변수로 여러 열을 지정할 수 없기 때문
+COUNT 함수는 하나의 열 또는 *를 매개변수로 받아 해당 열의 비어 있지 않은 행의 개수를 계산
+*/
