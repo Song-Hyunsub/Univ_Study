@@ -1,0 +1,143 @@
+
+Class와 Struct의 차이점
+
+클래스(Class)와 구조체(Struct)는 둘 다 사용자 정의 데이터 타입을 정의할 때 사용되며, 데이터를 캡슐화하여 단일 단위로 관리할 수 있게 해줍니다. 그러나 C++에서는 몇 가지 중요한 차이점이 있습니다.
+
+클래스(Class)
+
+정의:
+클래스는 객체 지향 프로그래밍의 핵심 개념으로, 데이터 멤버(변수)와 멤버 함수(메서드)를 포함할 수 있는 사용자 정의 데이터 타입입니다. 클래스는 캡슐화(encapsulation), 상속(inheritance), 다형성(polymorphism)과 같은 객체 지향 프로그래밍의 주요 특징을 지원합니다.
+
+예시:
+class Person {
+public:
+    int weight;
+    int height;
+    int rank;
+
+    void setRank(int r) {
+        rank = r;
+    }
+};
+
+구조체(Struct)
+
+정의:
+구조체는 기본적으로 클래스와 매우 유사하지만, 기본적으로 멤버의 접근 제어가 public으로 설정되는 사용자 정의 데이터 타입입니다. C++에서 구조체도 데이터 멤버와 멤버 함수를 포함할 수 있습니다.
+
+예시:
+struct Person {
+    int weight;
+    int height;
+    int rank;
+
+    void setRank(int r) {
+        rank = r;
+    }
+};
+
+차이점
+
+1. 기본 접근 제어:
+- 클래스: 기본적으로 private 접근 제어를 가집니다.
+- 구조체: 기본적으로 public 접근 제어를 가집니다.
+
+예시:
+class MyClass {
+    int a; // private by default
+};
+
+struct MyStruct {
+    int a; // public by default
+};
+
+2. 목적 및 사용 용도:
+- 클래스: 일반적으로 복잡한 데이터 구조와 객체 지향 프로그래밍 기능(상속, 다형성 등)을 구현하는 데 사용됩니다.
+- 구조체: 일반적으로 단순한 데이터 그룹을 나타내는 데 사용됩니다.
+
+3. 구문적 차이점:
+- 클래스와 구조체는 구문적으로 거의 동일하게 사용될 수 있지만, 클래스는 주로 객체 지향적 개념을 강조할 때, 구조체는 단순한 데이터 구조를 나타낼 때 사용됩니다.
+
+4. 상속:
+- 클래스: 상속이 주로 사용되며, 클래스 상속은 객체 지향 프로그래밍의 핵심 요소입니다.
+- 구조체: 구조체도 상속을 지원하지만, 주로 단순한 데이터 캡슐화를 위해 사용됩니다.
+
+예제 코드 비교
+
+클래스 사용 예제
+#include <iostream>
+using namespace std;
+
+class Person {
+private:
+    int weight;
+    int height;
+
+public:
+    int rank;
+
+    Person(int w, int h) : weight(w), height(h), rank(1) {}
+
+    bool isLargerThan(const Person& other) const {
+        return weight > other.weight && height > other.height;
+    }
+};
+
+int main() {
+    Person p1(55, 185);
+    Person p2(58, 183);
+
+    if (p1.isLargerThan(p2)) {
+        cout << "Person 1 is larger than Person 2" << endl;
+    } else {
+        cout << "Person 1 is not larger than Person 2" << endl;
+    }
+
+    return 0;
+}
+
+구조체 사용 예제
+#include <iostream>
+using namespace std;
+
+struct Person {
+    int weight;
+    int height;
+    int rank;
+
+    Person(int w, int h) : weight(w), height(h), rank(1) {}
+
+    bool isLargerThan(const Person& other) const {
+        return weight > other.weight && height > other.height;
+    }
+};
+
+int main() {
+    Person p1(55, 185);
+    Person p2(58, 183);
+
+    if (p1.isLargerThan(p2)) {
+        cout << "Person 1 is larger than Person 2" << endl;
+    } else {
+        cout << "Person 1 is not larger than Person 2" << endl;
+    }
+
+    return 0;
+}
+
+결론
+클래스와 구조체는 C++에서 모두 강력한 데이터 캡슐화 도구입니다. 기본 접근 제어와 주 사용 목적에서 차이가 있지만, 둘 다 객체 지향 프로그래밍의 일부 기능을 지원합니다. 코드 작성 시 복잡성 및 의도를 고려하여 클래스를 사용할지 구조체를 사용할지 결정하면 됩니다.
+
+
+
+Class의 4가지 특성
+1. 은닉화
+- 멤버의 접근 권한을 기본 private으로 두면서, 외부 접근을 차단한다. (데이터 보호)
+2. 캡슐화
+- 관련있는 데이터와 기능을 한 번에 묶어서 제공한다.
+ (구성요소를 외부로부터 숨겨서, 사용자가 내부 부분을 몰라도 약속 부분을 통해 기능 사용 가능)
+3. 상속성
+- 임의의 클래스가 가진 공통된 요소를 다른 클래스에게 물려줄 수 있다.
+ (재사용성 증대, 생산성 증대) => 기능의 확장과 세분화가 가능
+4. 다형성
+각기 다른 객체가 동일한 메시지를 통해 각기 다른 기능을 수행 => 코드의 유연성
