@@ -20,6 +20,9 @@ print(cabinet.get("B-100"))
 print(cabinet["B-100"])
 # 김태호
 
+print("C-20" in cabinet)
+# True
+
 print(cabinet.keys())
 # dict_keys(['B-100', 'C-20'])
 
