@@ -71,6 +71,6 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		cout << p[i].rank << " ";
 	}
-
+    	delete[] p;
 	return 0;
 }
