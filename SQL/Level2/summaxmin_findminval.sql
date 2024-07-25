@@ -1,0 +1,8 @@
+/*
+테이블 : ANIMAL_INS
+출력 컬럼 : DATETIME AS 시간
+조건) MIN(DATETIME)
+*/
+
+SELECT MIN(DATETIME) AS 시간
+FROM ANIMAL_INS;
