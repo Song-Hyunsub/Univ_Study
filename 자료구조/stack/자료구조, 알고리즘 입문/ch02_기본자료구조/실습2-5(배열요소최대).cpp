@@ -18,7 +18,7 @@ int main(){
     cout << "height[" << i << "]: ";
     cin >> height[i];
   }
-  cout << "최댓값은 " << maxof(height, number) << "입니다." << endl;
+  cout << "최댓값은 " << maxof(height, num) << "입니다." << endl;
   delete[] height;
   return 0;
 }
