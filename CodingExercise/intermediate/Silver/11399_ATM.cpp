@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-int main(){
+int main(){ 
     int N, sum=0;
     cin >> N;
     vector<int> time(N);
