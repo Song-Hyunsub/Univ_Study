@@ -1,0 +1,11 @@
+/*
+테이블 : ANIMAL_INS
+출력 컬럼 : ANIMAL_ID, NAME, SEX_UPON_INTAKE
+조건)
+ORDER BY ANIMAL_ID
+*/
+
+SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS
+WHERE NAME IN ('Lucy', 'Ella', 'Pickle', 'Rogan', 'Sabrina', 'Mitty')
+ORDER BY ANIMAL_ID;
