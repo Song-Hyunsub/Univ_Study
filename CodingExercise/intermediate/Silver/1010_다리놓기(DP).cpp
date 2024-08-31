@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int T = 0;
+    cin >> T;
+    for(int i=0; i<T; i++){
+        long long result = 1;
+        int N = 0;
+        int M = 0;
+        cin >> N >> M;
+        int r = 1;
+        for(int j=M; j>M-N; j--){
+            result = result * j;
+            result = result / r;
+            r++;
+        }
+        cout << result << endl;
+    }
+    return 0;
+}
