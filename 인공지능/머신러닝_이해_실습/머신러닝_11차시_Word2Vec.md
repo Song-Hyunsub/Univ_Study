@@ -49,8 +49,8 @@ word2vec.Word2Vec 함수
 - 임베딩의 크기는 skip gram 알고리즘에서 hidden layer의 크기에 해당한다.
 <br>
 <img width="610" alt="word2vec" src="https://github.com/user-attachments/assets/17872897-013e-4043-b4f2-10e8c5411cda" />
-<br>
+<br>  
 - 원의 지름 : tf-idf의 score를 의미  
 - 단어의 가까움의 정도가 나타남  
-- tf-idf score와 Word2Vec의 정보를 같이 볼 수 있음  
+- tf-idf score와 Word2Vec의 정보를 같이 볼 수 있음   
   
