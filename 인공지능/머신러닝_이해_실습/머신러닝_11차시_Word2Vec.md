@@ -14,8 +14,10 @@ Skip-gram : 중심 단어에서 주변 단어를 예측하는 모델
 <img width="522" alt="Skip-gram" src="https://github.com/user-attachments/assets/028b5857-0622-4cf3-ac93-a31d5f86958e" />
 <br>
 W'(N*V)  
-N = 사용자가 설정  
-V = 사전 크기  
+V : 사전의 크기로서 전체 단어들의 개수  
+N : 단어를 표현할 임베딩 벡터의 크기로서 신경망에서 hidden layer의 size  
+Window Size : 주변에 나타나는 단어를 선정할 때 반경  
+
 Word2Vec의 훈련과정 확인 사이트 : https://ronxin.github.io/wevi/  
 최종적으로 훈련된 단어의 가중치를 통하여 담어 임베딩 벡터를 구할 수 있음  
 <br>
